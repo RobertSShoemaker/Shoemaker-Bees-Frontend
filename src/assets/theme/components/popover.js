@@ -13,26 +13,21 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-// import ReactDOM from "react-dom";
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+// Material Kit 2 React base styles
+import colors from "assets/theme/base/colors";
+import boxShadows from "assets/theme/base/boxShadows";
+import borders from "assets/theme/base/borders";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const { transparent } = colors;
+const { lg } = boxShadows;
+const { borderRadius } = borders;
 
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
-
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>,
-//   document.getElementById("root")
-// );
+export default {
+  styleOverrides: {
+    paper: {
+      backgroundColor: transparent.main,
+      boxShadow: lg,
+      borderRadius: borderRadius.md,
+    },
+  },
+};

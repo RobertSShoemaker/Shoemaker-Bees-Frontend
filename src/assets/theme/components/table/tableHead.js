@@ -13,26 +13,20 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-// import ReactDOM from "react-dom";
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+// Material Kit 2 React base styles
+import borders from "assets/theme/base/borders";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+// Material Kit 2 React helper functions
+import pxToRem from "assets/theme/functions/pxToRem";
 
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+const { borderRadius } = borders;
 
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>,
-//   document.getElementById("root")
-// );
+export default {
+  styleOverrides: {
+    root: {
+      display: "block",
+      padding: `${pxToRem(16)} ${pxToRem(16)} 0  ${pxToRem(16)}`,
+      borderRadius: `${borderRadius.xl} ${borderRadius.xl} 0 0`,
+    },
+  },
+};
